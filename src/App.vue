@@ -9,7 +9,7 @@ const routes = constantRoute[0].children
 
 <template>
   <div class="container">
-    <nav>
+    <nav class="desktop-nav">
       <ul>
         <li v-for="route in routes" :key="route.path">
           <router-link :to="route.path">
@@ -28,30 +28,66 @@ const routes = constantRoute[0].children
 .container {
   display: flex;
   min-height: 100vh;
+  background: #fafafa;
 }
 
-nav {
-  width: 200px;
-  padding: 20px;
-  border-right: 1px solid #eee;
+.desktop-nav {
+  width: 240px;
+  padding: 2rem 1rem;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+  position: fixed;
+  height: 100%;
 }
 
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 li {
-  margin: 10px 0;
+  margin: 0.5rem 0;
+}
+
+li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #4b5563;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+li a:hover {
+  background: #f3f4f6;
+  color: var(--primary-color);
 }
 
 .router-link-active {
-  color: #42b983;
-  font-weight: bold;
+  background: #ecfdf5;
+  color: var(--primary-color) !important;
+  font-weight: 500;
 }
 
 main {
   flex: 1;
-  padding: 20px;
+  padding: 2rem;
+  margin-left: 240px;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 1rem;
+  }
 }
 </style>

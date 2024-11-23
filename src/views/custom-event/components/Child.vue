@@ -32,6 +32,7 @@ function sendMsg() {
   padding: 15px;
   border-radius: 4px;
 }
+
 .btn {
   background: #42b983;
   color: white;
@@ -42,11 +43,32 @@ function sendMsg() {
   font-size: 14px;
   transition: background 0.3s;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
+
 .btn:hover {
   background: #3aa876;
 }
+
 .btn:active {
   transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 12px;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .btn:last-child {
+    margin-bottom: 0;
+  }
+
+  .child {
+    padding: 12px;
+  }
 }
 </style>

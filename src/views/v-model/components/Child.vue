@@ -58,4 +58,24 @@ const { t } = useI18n()
 .btn:active {
   transform: scale(0.98);
 }
+
+@media (max-width: 768px) {
+  .child {
+    padding: 12px;
+  }
+
+  .input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 12px;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
 </style>

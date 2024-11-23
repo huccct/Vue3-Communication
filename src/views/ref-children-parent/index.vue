@@ -45,12 +45,14 @@ defineExpose({
 .ref-demo {
   padding: 20px;
 }
+
 .parent {
   border: 1px solid #ddd;
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 4px;
 }
+
 .btn {
   background: #42b983;
   color: white;
@@ -61,11 +63,36 @@ defineExpose({
   font-size: 14px;
   transition: background 0.3s;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
+
 .btn:hover {
   background: #3aa876;
 }
+
 .btn:active {
   transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .ref-demo {
+    padding: 12px;
+  }
+  
+  .parent {
+    padding: 12px;
+  }
+  
+  .btn {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 12px;
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .btn:last-child {
+    margin-bottom: 0;
+  }
 }
 </style>

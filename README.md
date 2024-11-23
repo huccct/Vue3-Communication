@@ -1,21 +1,21 @@
-# Vue3 组件通信示例
+# Vue3 Component Communication Examples
 
-一个展示 Vue3 各种组件通信方式的示例项目。[相关博客文章](your-blog-url)
+A comprehensive demo project showcasing various communication patterns in Vue 3. [Related Blog Post](https://www.orionchen.me/blog/vue3-component-communication)
 
-## 功能特点
+## Features
 
-- 🌍 国际化支持 (中文/英文)
-- 🎨 响应式设计
-- 📱 移动端适配
+- 🌍 I18n Support (English/Chinese)
+- 🎨 Responsive Design
+- 📱 Mobile-friendly
 
-## 通信方式演示
+## Communication Patterns
 
-- Props 传值
-- 自定义事件
-- 事件总线
-- v-Model 绑定
-- useAttrs/useSlots
-- ref/$parent
-- Provide/Inject
-- Pinia 状态管理
-- 插槽
+- Props (Read-only data flow)
+- Custom Events (Child to parent)
+- Event Bus (Cross-component)
+- v-Model Binding (Two-way binding)
+- useAttrs/useSlots (Attribute inheritance)
+- ref/$parent (Direct access)
+- Provide/Inject (Deep component tree)
+- Pinia (State management)
+- Slots (Content distribution)

@@ -27,12 +27,14 @@ const store = useCounterStore()
 .pinia-demo {
   padding: 20px;
 }
+
 .parent {
   border: 1px solid #ddd;
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 4px;
 }
+
 .btn {
   background: #42b983;
   color: white;
@@ -43,11 +45,23 @@ const store = useCounterStore()
   font-size: 14px;
   transition: background 0.3s;
   margin-right: 10px;
+  margin-bottom: 10px;
+  min-width: 120px;
 }
+
 .btn:hover {
   background: #3aa876;
 }
+
 .btn:active {
   transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+    min-width: unset;
+    margin-right: 0;
+  }
 }
 </style>

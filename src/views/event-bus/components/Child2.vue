@@ -40,4 +40,10 @@ onUnmounted(() => {
   padding: 15px;
   border-radius: 4px;
 }
+
+@media (max-width: 768px) {
+  .child {
+    padding: 12px;
+  }
+}
 </style>

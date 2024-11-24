@@ -17,8 +17,20 @@ import Child2 from './components/Child2.vue'
 .event-bus-demo {
   padding: 20px;
 }
+
 .children {
   display: flex;
   gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .event-bus-demo {
+    padding: 12px;
+  }
+  
+  .children {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 </style>

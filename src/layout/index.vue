@@ -2,12 +2,15 @@
 import { constantRoute } from '@/router'
 import { Close, Menu } from '@element-plus/icons-vue'
 import { ElIcon } from 'element-plus'
-import { ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()
 const isMenuOpen = ref(false)
 const routes = constantRoute[0].children
+const bodyClass = computed(() => ({
+  'overflow-hidden': isMenuOpen.value,
+}))
 
 function toggleLocale() {
   locale.value = locale.value === 'zh' ? 'en' : 'zh'
@@ -16,10 +19,19 @@ function toggleLocale() {
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value
 }
+
+watch(isMenuOpen, (val) => {
+  if (val) {
+    document.body.style.overflow = 'hidden'
+  }
+  else {
+    document.body.style.overflow = ''
+  }
+})
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout" :class="bodyClass">
     <header class="header">
       <div class="left">
         <h1>{{ $t('title') }}</h1>
@@ -183,6 +195,8 @@ function toggleMenu() {
   transition: transform 0.3s ease;
   z-index: 1000;
   display: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-nav.active {
@@ -191,7 +205,7 @@ function toggleMenu() {
 
 .mobile-nav nav {
   height: 100%;
-  padding: 2rem;
+  padding: 2rem 2rem 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -220,25 +234,25 @@ function toggleMenu() {
 
 .close-btn {
   position: fixed;
-  bottom: 2rem;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border: none;
   border-radius: 50%;
-  background: #2c3e50;
+  background: var(--primary-color);
   color: white;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(66, 185, 131, 0.2);
 }
 
 .close-btn:hover {
-  background: #1e2a37;
+  background: var(--hover-color);
   transform: translateX(-50%) scale(1.05);
 }
 
@@ -250,5 +264,10 @@ function toggleMenu() {
   .mobile-nav {
     display: block;
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+  height: 100vh;
 }
 </style>

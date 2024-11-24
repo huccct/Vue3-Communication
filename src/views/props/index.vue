@@ -59,7 +59,7 @@ defineProps<{
   <div class="props-demo">
     <h2>{{ t('pages.props.title') }}</h2>
     <button class="code-toggle" @click="showCode = !showCode">
-      {{ showCode ? '隐藏代码' : '显示代码' }}
+      {{ showCode ? t('common.hideCode') : t('common.showCode') }}
     </button>
     <div class="parent">
       <h3>{{ t('common.parent') }}：</h3>

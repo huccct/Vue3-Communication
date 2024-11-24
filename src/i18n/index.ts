@@ -26,6 +26,8 @@ const messages = {
         pinia: 'Pinia',
         slot: 'Slot',
       },
+      showCode: 'Show Code',
+      hideCode: 'Hide Code'
     },
     pages: {
       props: {
@@ -117,6 +119,8 @@ const messages = {
         pinia: 'Pinia状态管理',
         slot: '插槽',
       },
+      showCode: '显示代码',
+      hideCode: '隐藏代码'
     },
     pages: {
       props: {
